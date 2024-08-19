@@ -20,7 +20,18 @@
 
     <main class="home-page">
       <section class="home-page__conteiner-input">
-        <input type="text" class="home-page__conteiner-input__text" />
+        <input
+          class="home-page__conteiner-input__text"
+          type="text"
+          placeholder="Digite seu texto"
+        />
+
+        <p class="home-page__conteiner-input__alert">
+          <img
+            src="/assets/bi_exclamation-circle-fill.svg"
+            alt="Logo de alerta"
+          />Apenas letras minúsculas e sem acento.
+        </p>
 
         <div class="home-page__conteiner-input__buttons">
           <button
@@ -38,7 +49,26 @@
           </button>
         </div>
       </section>
-      <section class="home-page__conteiner-text-output"></section>
+
+      <section class="home-page__conteiner-output">
+        <p class="home-page__conteiner-output__text"></p>
+
+        <div class="home-page__conteiner-output__no-text-found">
+          <img
+            class="home-page__conteiner-output__no-text-found__image"
+            src="/assets/no-text-found.svg"
+            alt="Imagem de no-text-found"
+          />
+
+          <h1 class="home-page__conteiner-output__no-text-found__title">
+            Nenhuma mensagem encontrada
+          </h1>
+
+          <p class="home-page__conteiner-output__no-text-found__text">
+            Digite um texto que você deseja criptografar ou descriptografar.
+          </p>
+        </div>
+      </section>
     </main>
 
     <footer></footer>
