@@ -44,15 +44,9 @@ body {
 .home-page__conteiner-input {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: space-between;
 
   margin: 128px 0px 32px 0px;
-}
-
-.home-page__conteiner-input__text {
-  display: flex;
-  flex-direction: column;
-  gap: 635px;
 }
 
 .home-page__conteiner-input__text__input {
@@ -64,6 +58,9 @@ body {
   font-weight: 400;
   font-size: 32px;
   line-height: 150%;
+
+  height: 100%;
+  resize: none;
 }
 
 .home-page__conteiner-input__text__input::placeholder {
@@ -78,7 +75,7 @@ body {
   color: transparent;
 }
 
-.home-page__conteiner-input__text__alert {
+.home-page__conteiner-input__others__alert {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 12px;
@@ -89,12 +86,12 @@ body {
   gap: 8px;
 }
 
-.home-page__conteiner-input__buttons {
+.home-page__conteiner-input__others__buttons {
   display: flex;
   gap: 24px;
 }
 
-.home-page__conteiner-input__buttons > button {
+.home-page__conteiner-input__others__buttons > button {
   width: 328px;
   height: 67px;
 
@@ -105,13 +102,13 @@ body {
   font-size: 16px;
 }
 
-.home-page__conteiner-input__buttons__criptografar {
+.home-page__conteiner-input__others__buttons__criptografar {
   background-color: #0a3871;
   color: #fff;
   border-color: #0a3871;
 }
 
-.home-page__conteiner-input__buttons__descriptografar {
+.home-page__conteiner-input__others__buttons__descriptografar {
   background-color: #d8dfe8;
   color: #0a3871;
   border-color: #0a3871;
