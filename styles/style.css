@@ -1,0 +1,169 @@
+/*! Fonts ---------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/*! Variaveis css (propriedades personalizaveis) ------- */
+/* :root {
+
+    } */
+
+/*! Reset css ------------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*! Configuracoes gerais ------------------------------- */
+body {
+  padding: 40px;
+  box-sizing: border-box;
+
+  background-color: #f3f5fc;
+  color: #343a40;
+  display: flex;
+  gap: 80px;
+}
+
+/*! aside --------------------------------------------- */
+.menu-lateral {
+  padding: 0;
+}
+
+.menu-lateral__links {
+  width: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+/*! main ----------------------------------------------- */
+.home-page {
+  display: flex;
+  gap: 80px;
+}
+
+/** main-input ----------------------------------------- */
+.home-page__conteiner-input {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  margin: 128px 0px 32px 0px;
+}
+
+.home-page__conteiner-input__text {
+  display: flex;
+  flex-direction: column;
+  gap: 635px;
+}
+
+.home-page__conteiner-input__text__input {
+  background-color: #f3f5fc;
+  color: #0a3871;
+  border: none;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 150%;
+}
+
+.home-page__conteiner-input__text__input::placeholder {
+  color: #0a3871;
+}
+
+.home-page__conteiner-input__text__input:focus {
+  outline: none;
+}
+
+.home-page__conteiner-input__text__input:focus::placeholder {
+  color: transparent;
+}
+
+.home-page__conteiner-input__text__alert {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+
+  display: inline-flex;
+  text-align: center;
+  gap: 8px;
+}
+
+.home-page__conteiner-input__buttons {
+  display: flex;
+  gap: 24px;
+}
+
+.home-page__conteiner-input__buttons > button {
+  width: 328px;
+  height: 67px;
+
+  border-radius: 24px;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.home-page__conteiner-input__buttons__criptografar {
+  background-color: #0a3871;
+  color: #fff;
+  border-color: #0a3871;
+}
+
+.home-page__conteiner-input__buttons__descriptografar {
+  background-color: #d8dfe8;
+  color: #0a3871;
+  border-color: #0a3871;
+}
+
+/** main-output ---------------------------------------- */
+
+.home-page__conteiner-output {
+  background-color: #fff;
+
+  padding: 32px;
+  border-radius: 32px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-page__conteiner-output__text-found {
+  display: none;
+}
+
+.home-page__conteiner-output__no-text-found {
+  display: flex;
+  flex-direction: column;
+
+  gap: 32px;
+}
+
+.home-page__conteiner-output__no-text-found__text {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  text-align: center;
+}
+
+.home-page__conteiner-output__no-text-found__text__title {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+}
+
+.home-page__conteiner-output__no-text-found__text__subtitle {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+/*! footer --------------------------------------------- */
+
+/*! @media queries ------------------------------------- */
