@@ -21,15 +21,16 @@ body {
   color: #343a40;
   display: flex;
   gap: 80px;
+
+  height: 100vh;
 }
 
 /*! aside --------------------------------------------- */
 .menu-lateral {
-  padding: 0;
+  width: 120px;
 }
 
 .menu-lateral__links {
-  width: 120px;
   display: flex;
   justify-content: center;
 }
