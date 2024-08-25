@@ -73,11 +73,16 @@ function substituirLetra(textoOriginal, substituicoes) {
 function substituirTexto(textoOriginal, substituicoes) {
   let textoModificado = textoOriginal;
 
-  // Percorre todas as substituições e as aplica no texto original
-  for (let [chave, valor] of Object.entries(substituicoes)) {
+  // Ordenar as chaves pelas maiores substituições primeiro para evitar substituições parciais
+  let chavesOrdenadas = Object.keys(substituicoes).sort(
+    (a, b) => b.length - a.length
+  );
+
+  // Aplicar substituições baseadas na ordem das chaves
+  chavesOrdenadas.forEach((chave) => {
     let regex = new RegExp(chave, "g");
-    textoModificado = textoModificado.replace(regex, valor);
-  }
+    textoModificado = textoModificado.replace(regex, substituicoes[chave]);
+  });
 
   return textoModificado;
 }
