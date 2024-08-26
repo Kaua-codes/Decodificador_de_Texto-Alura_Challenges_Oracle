@@ -1,18 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=7" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Decodificador de texto</title>
+    <link rel="alura icon" type="" href="assets/alura-icon.ico" />
     <link rel="stylesheet" href="/styles/style.css" />
   </head>
 
   <body>
-    <header></header>
+    <header class="menu-lateral">
+      <nav class="menu-lateral__links">
+        <a class="menu-lateral__links__link" href="index.html">
+          <img src="/assets/vector-alura-icon.svg" alt="Logo da alura" />
+        </a>
+      </nav>
+    </header>
 
-    <main></main>
+    <main class="home-page">
+      <section class="home-page__conteiner-input">
+        <div class="home-page__conteiner-input__text">
+          <textarea
+            class="home-page__conteiner-input__text__input"
+            placeholder="Digite seu texto"
+          ></textarea>
+        </div>
 
-    <footer></footer>
+        <div class="home-page__conteiner-input__others">
+          <p class="home-page__conteiner-input__others__alert">
+            <img
+              src="/assets/bi_exclamation-circle-fill.svg"
+              alt="Logo de alerta"
+            />Apenas letras minúsculas e sem acento.
+          </p>
+
+          <div class="home-page__conteiner-input__others__buttons">
+            <button
+              onclick="criptografarMensagem()"
+              class="home-page__conteiner-input__others__buttons__criptografar"
+            >
+              Criptografar
+            </button>
+
+            <button
+              onclick="descriptografarMensagem()"
+              class="home-page__conteiner-input__others__buttons__descriptografar"
+            >
+              Descriptografar
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-page__conteiner-output">
+        <div class="home-page__conteiner-output__text-found">
+          <div>
+            <p class="home-page__conteiner-output__text-found__text"></p>
+          </div>
+
+          <div>
+            <button
+              onclick=""
+              class="home-page__conteiner-output__button-copiar"
+              disabled
+            >
+              Copiar
+            </button>
+          </div>
+        </div>
+
+        <div class="home-page__conteiner-output__no-text-found">
+          <img
+            class="home-page__conteiner-output__no-text-found__image"
+            src="/assets/no-text-found.svg"
+            alt="Imagem de no-text-found"
+          />
+
+          <div class="home-page__conteiner-output__no-text-found__text">
+            <h1 class="home-page__conteiner-output__no-text-found__text__title">
+              Nenhuma mensagem encontrada
+            </h1>
+
+            <p
+              class="home-page__conteiner-output__no-text-found__text__subtitle"
+            >
+              Digite um texto que você deseja criptografar ou descriptografar.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="app.js" defer></script>
   </body>
 </html>
