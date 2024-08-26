@@ -14,7 +14,6 @@ let chavesDescriptografia = {
   ober: "o",
   ufat: "u",
 };
-
 const expressaoRegularMinusculas = /^[a-z]+$/;
 
 function criptografarMensagem() {
@@ -27,8 +26,16 @@ function criptografarMensagem() {
   if (statusValidadeMensagem) {
     let mensagemCriptografada = substituirLetra(mensagem, chavesCriptografia);
     console.log("Mensagem criptografada: " + mensagemCriptografada);
+
+    habilitarOutput();
+
+    exibirTextoNaTela(
+      "home-page__conteiner-output__text-found__text",
+      mensagemCriptografada
+    );
   } else {
-    limparTextarea();
+    limparCampo("textarea");
+    desabilitarOutput();
   }
 }
 
@@ -45,46 +52,17 @@ function descriptografarMensagem() {
       chavesDescriptografia
     );
     console.log("Mensagem descriptografada: " + mensagemDescriptografada);
+
+    habilitarOutput();
+
+    exibirTextoNaTela(
+      "home-page__conteiner-output__text-found__text",
+      mensagemDescriptografada
+    );
   } else {
-    limparTextarea();
+    limparCampo("textarea");
+    desabilitarOutput();
   }
-}
-
-function exibirTextoNaTela(tag, texto) {
-  let campo = document.querySelector(tag);
-  campo.innerHTML = texto;
-}
-
-function substituirLetra(textoOriginal, substituicoes) {
-  let textoModificado = "";
-
-  for (let i = 0; i < textoOriginal.length; i++) {
-    let letraAtual = textoOriginal[i];
-
-    if (substituicoes[letraAtual]) {
-      textoModificado += substituicoes[letraAtual];
-    } else {
-      textoModificado += letraAtual;
-    }
-  }
-  return textoModificado;
-}
-
-function substituirTexto(textoOriginal, substituicoes) {
-  let textoModificado = textoOriginal;
-
-  // Ordenar as chaves pelas maiores substituições primeiro para evitar substituições parciais
-  let chavesOrdenadas = Object.keys(substituicoes).sort(
-    (a, b) => b.length - a.length
-  );
-
-  // Aplicar substituições baseadas na ordem das chaves
-  chavesOrdenadas.forEach((chave) => {
-    let regex = new RegExp(chave, "g");
-    textoModificado = textoModificado.replace(regex, substituicoes[chave]);
-  });
-
-  return textoModificado;
 }
 
 function validarMensagem(mensagem) {
@@ -135,7 +113,68 @@ function validarMensagem(mensagem) {
   }
 }
 
-function limparTextarea() {
-  mensagem = document.querySelector("textarea");
+function substituirLetra(textoOriginal, substituicoes) {
+  let textoModificado = "";
+
+  for (let i = 0; i < textoOriginal.length; i++) {
+    let letraAtual = textoOriginal[i];
+
+    if (substituicoes[letraAtual]) {
+      textoModificado += substituicoes[letraAtual];
+    } else {
+      textoModificado += letraAtual;
+    }
+  }
+  return textoModificado;
+}
+
+function substituirTexto(textoOriginal, substituicoes) {
+  let textoModificado = textoOriginal;
+
+  // Ordenar as chaves pelas maiores substituições primeiro para evitar substituições parciais
+  let chavesOrdenadas = Object.keys(substituicoes).sort(
+    (a, b) => b.length - a.length
+  );
+
+  // Aplicar substituições baseadas na ordem das chaves
+  chavesOrdenadas.forEach((chave) => {
+    let regex = new RegExp(chave, "g");
+    textoModificado = textoModificado.replace(regex, substituicoes[chave]);
+  });
+
+  return textoModificado;
+}
+
+function exibirTextoNaTela(classe, texto) {
+  let campo = document.querySelector(`.${classe}`);
+  campo.innerHTML = texto;
+}
+
+function limparCampo(campo) {
+  mensagem = document.querySelector(campo);
   mensagem.value = "";
+}
+
+function habilitarOutput() {
+  document.querySelector(
+    ".home-page__conteiner-output__no-text-found"
+  ).style.display = "none";
+
+  document.querySelector(
+    ".home-page__conteiner-output__text-found"
+  ).style.display = "flex";
+
+  return;
+}
+
+function desabilitarOutput() {
+  document.querySelector(
+    ".home-page__conteiner-output__no-text-found"
+  ).style.display = "flex";
+
+  document.querySelector(
+    ".home-page__conteiner-output__text-found"
+  ).style.display = "none";
+
+  return;
 }
